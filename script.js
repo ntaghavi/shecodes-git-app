@@ -51,12 +51,26 @@ function handleAxiosResponse(response) {
   hum.innerHTML = Math.round(response.data.main.humidity);
   wind.innerHTML = Math.round(response.data.wind.speed);
 }
+function getCityCoords(cityName) {
+  let cityApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${urlKey}`;
+  axios.get(cityApiUrl).then((response) => {
+    let coords = {
+      lat: response.data[0].lat,
+      lon: response.data[0].lon,
+    };
+    alert(coords);
+    return coords;
+  });
+}
+
+function handleForecast(response) {}
 function formEvent(event) {
   event.preventDefault();
   let searchText = document.querySelector("#search-text-input");
 
   searchedCity = searchText.value;
   let urlApiWeather = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&appid=${urlKey}&&units=metric`;
+  let forecastUrl = `api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt=5&appid=${urlKey}&&units=metric`;
   axios.get(urlApiWeather).then(handleAxiosResponse);
 }
 searchForm.addEventListener("submit", formEvent);
