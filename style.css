@@ -1,16 +1,126 @@
-h1 {
+.icon {
+  width: 150px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.search {
+  display: block;
+}
+.search-text {
+  width: 75%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-right: 10px;
+  margin-left: 10px;
+  display: inline;
+}
+.search-button {
+  width: 18%;
+  border-radius: 5px;
+  border: 1px solid #8064e9;
+  background: #8064e9;
+  color: #fff;
+  font-size: 16px;
+  display: inline;
+  line-height: 4px;
+  padding: 16px 24px;
+  text-decoration: none;
+  transition: all 200ms ease;
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+}
+.search-button:hover {
+  cursor: pointer;
+  background: #5e41a7;
+}
+#gps {
+  display: inline;
+  right: 10px;
+  top: 30px;
+  border: 1px solid #8064e9;
+  border-radius: 5px;
+  background: #8064e9;
+  color: #fff;
+  display: inline;
+  line-height: 4px;
+  padding: 16px 10px;
+  text-decoration: none;
+  transition: all 200ms ease;
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+  position: absolute;
+}
+#gps:hover {
+  cursor: pointer;
+  background: #5e41a7;
+}
+.align-right {
+  text-align: right;
+  padding-left: 40px;
+}
+.current {
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+.temp {
+  text-align: right;
+  padding-right: 30px;
+}
+.emoji {
+  font-size: xx-large;
+  display: inline;
+}
+.temp {
+  border: none;
+}
+.temperature {
+  font-weight: bolder;
+  font-size: xx-large;
+  display: inline;
+}
+.forecast {
+  margin-bottom: 30px;
+}
+.forecast-day {
+  padding: 10px;
+  text-align: center;
+  border: none;
+  position: relative;
+  margin: auto;
+}
+.footer {
+  font-family: monospace;
+  font-size: 14px;
+  opacity: 0.8;
   text-align: center;
 }
 
-img {
-  width: 90%;
-  margin: 20px auto;
-  border-radius: 20px;
-  display: block;
-}
-
-.contact-btn {
+.my-container {
+  width: 800px;
   display: block;
   margin: 0 auto;
-  width: 200px;
+  margin-top: 50px;
+}
+.max-t {
+  color: #8064e9;
+  font-weight: bold;
+}
+.day {
+  font-weight: bold;
+  color: #5e41a7;
+}
+.clk {
+  font-family: monospace;
+  color: #8064e9;
+  font-weight: lighter;
+}
+.w-stat {
+  font-style: italic;
+  font-weight: lighter;
+}
+#celcius:hover {
+  cursor: pointer;
+}
+#farenheit:hover {
+  cursor: pointer;
 }
