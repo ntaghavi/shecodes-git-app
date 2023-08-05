@@ -1,4 +1,3 @@
-import axios from "axios";
 let wdays = [
   "Sunday",
   "Monday",
@@ -66,6 +65,7 @@ function getCityCoords(cityName) {
 
 function handleForecast(response) {}
 function formEvent(event) {
+  console.log("form");
   event.preventDefault();
   let searchText = document.querySelector("#search-text-input");
 

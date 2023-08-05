@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coding workshop for women</title>
@@ -15,40 +14,65 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    
-  <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
   </head>
-  
   <body>
     <div class="container card my-container">
-    <img src="https://www.shecodes.io/assets/branding/logo-shecodes--summer-42902242bc561967741362fbfcacbe7750d51da501d53b0e54d6498093bd0b75.png" alt="" class="icon">
-    <button id="gps">Your Location</button>
-    <div class="search">
-      <form id="search-form">
-          <input type="text" class="form-control search-text" id="search-text-input" placeholder="Enter a City">
-          <input type="submit" value="Search" class="search-button" id="search-submit">
-      </form>  
-    </div>
-    <div class="description">
+      <img
+        src="https://www.shecodes.io/assets/branding/logo-shecodes--summer-42902242bc561967741362fbfcacbe7750d51da501d53b0e54d6498093bd0b75.png"
+        alt=""
+        class="icon"
+      />
+      <button id="gps">Your Location</button>
+      <div class="search">
+        <form id="search-form">
+          <input
+            type="text"
+            class="form-control search-text"
+            id="search-text-input"
+            placeholder="Enter a City"
+          />
+          <input
+            type="submit"
+            value="Search"
+            class="search-button"
+            id="search-submit"
+          />
+        </form>
+      </div>
+      <div class="description">
         <div class="current row">
-            <div class="col-6 card" style="padding-bottom: 10px; border: none;">
-                <h1 class="card-title day" id="city-name">Tehran</h1>
-                <p class="card-subtitle" ><span id="city-current-wday">Sunday</span> <span class="clk" id="city-current-clock">12:00</span></p>
-                <p class="card-subtitle w-stat" id="weather-d">Clear</p>
-                
-            </div>
-            <div class="col-6 temp">
-            <!-- <div class="emoji">☀️</div> -->
-            <img src="https://openweathermap.org/img/wn/10d@2x.png" class="emoji" id="w-em"/>
-            <span  class="temperature card-title"><span id="city-current-temp">30</span>&deg;</span>
-            <span style="color:blue" id="celcius">C&deg;</span> | <span style="color:blue" id="farenheit">F&deg;</span></span>
-            <p class="card-subtitle w-stat align-right">Humidity: <span id="city-current-humidity">12</span>%</p>
-            <p class="card-subtitle w-stat align-right">Wind Speed: <span id="city-current-wind">12</span> km/h</p>
-            </div>
-
-     
+          <div class="col-6 card" style="padding-bottom: 10px; border: none">
+            <h1 class="card-title day" id="city-name">Tehran</h1>
+            <p class="card-subtitle">
+              <span id="city-current-wday">Sunday</span>
+              <span class="clk" id="city-current-clock">12:00</span>
+            </p>
+            <p class="card-subtitle w-stat" id="weather-d">Clear</p>
+          </div>
+          <!--current city-->
+          <div class="col-6 temp">
+            <img
+              src="https://openweathermap.org/img/wn/10d@2x.png"
+              class="emoji"
+              id="w-em"
+            />
+            <span class="temperature card-title"
+              ><span id="city-current-temp">30</span>&deg;</span
+            >
+            <span>
+              <span style="color: blue" id="celcius">C&deg;</span> |
+              <span style="color: blue" id="farenheit">F&deg;</span>
+            </span>
+          </div>
+          <!--temprature-->
         </div>
-        <!-- 
+        <!--current-->
+      </div>
+      <!--discription-->
+      <!-- 
         <div class="forecast row">
             <div class="col-2 card forecast-day">
                 <p class="card-title day">MON</p>
@@ -80,12 +104,26 @@
 
         </div>
          -->
-         <p class="footer">Coded by <span style="color: #8064e9;">Nazanin TQV</span></p>
-         <p class="footer">To See my GitHub Repository click <a href="https://github.com/ntaghavi/shecodes-git-app" target="_blank" style="color: #8064e9; text-decoration: none;">Here</a>!</p>
+      <p class="footer">
+        Coded by <span style="color: #8064e9">Nazanin TQV</span>
+      </p>
+      <p class="footer">
+        To See my GitHub Repository click
+        <a
+          href="https://github.com/ntaghavi/shecodes-git-app"
+          target="_blank"
+          style="color: #8064e9; text-decoration: none"
+          >Here</a
+        >!
+      </p>
     </div>
-</div>
-	 <script src="script.js"></script>
-   <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <!--container-->
+    <script src="script.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
