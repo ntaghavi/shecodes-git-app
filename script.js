@@ -29,6 +29,7 @@ let now = new Date();
 let wday = wdays[now.getDay()];
 let clock = ` ${formatClk(now.getHours())}:${formatClk(now.getMinutes())}`;
 let searchedCity = "";
+let celt = 0;
 let currentTemp = document.querySelector("#city-current-temp");
 var dayElement = document.getElementById("city-current-wday");
 dayElement.innerHTML = wday;
@@ -36,7 +37,6 @@ var clk = document.getElementById("city-current-clock");
 clk.innerHTML = clock;
 var searchForm = document.getElementById("search-form");
 function handleAxiosResponse(response) {
-  alert("Working");
   let city = document.getElementById("city-name");
   let hum = document.getElementById("city-current-humidity");
   let wind = document.getElementById("city-current-wind");
@@ -48,6 +48,7 @@ function handleAxiosResponse(response) {
   city.innerHTML = response.data.name;
   weatherD.innerHTML = response.data.weather[0].main;
   currentTemp.innerHTML = Math.round(response.data.main.temp);
+  celt = Math.round(response.data.main.temp);
   hum.innerHTML = Math.round(response.data.main.humidity);
   wind.innerHTML = Math.round(response.data.wind.speed);
 }
@@ -58,14 +59,13 @@ function getCityCoords(cityName) {
       lat: response.data[0].lat,
       lon: response.data[0].lon,
     };
-    alert(coords);
+    console.log(coords);
     return coords;
   });
 }
 
 function handleForecast(response) {}
 function formEvent(event) {
-  console.log("form");
   event.preventDefault();
   let searchText = document.querySelector("#search-text-input");
 
@@ -82,24 +82,25 @@ var celTemp = currentTemp.innerHTML;
 function celToFar(cel) {
   return cel * 1.8 + 32;
 }
-cel.addEventListener("click", () => {
-  currentTemp.innerHTML = celTemp;
-});
+function celEvent() {
+  currentTemp.innerHTML = celt;
+}
+function farEvent() {
+  currentTemp.innerHTML = celToFar(celt);
+}
+cel.addEventListener("click", celEvent);
 
-far.addEventListener("click", () => {
-  currentTemp.innerHTML = celToFar(celTemp);
-});
+far.addEventListener("click", farEvent);
 
 let loc = document.getElementById("gps");
 loc.addEventListener("click", handleGps);
 function handlePosition(position) {
   var lat = position.coords.latitude;
   var lon = position.coords.longitude;
-  alert(`lat: ${lat} lon: ${lon}`);
+  console.log(`lat: ${lat} lon: ${lon}`);
   let coordApi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${urlKey}&&units=metric`;
   axios.get(coordApi).then(handleAxiosResponse);
 }
 function handleGps() {
-  alert("gps handle");
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
