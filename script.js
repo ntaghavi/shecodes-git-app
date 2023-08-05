@@ -37,6 +37,7 @@ var clk = document.getElementById("city-current-clock");
 clk.innerHTML = clock;
 var searchForm = document.getElementById("search-form");
 function handleAxiosResponse(response) {
+  alert("Working");
   let city = document.getElementById("city-name");
   let hum = document.getElementById("city-current-humidity");
   let wind = document.getElementById("city-current-wind");
@@ -94,10 +95,11 @@ loc.addEventListener("click", handleGps);
 function handlePosition(position) {
   var lat = position.coords.latitude;
   var lon = position.coords.longitude;
-  console.log(`lat: ${lat} lon: ${lon}`);
+  alert(`lat: ${lat} lon: ${lon}`);
   let coordApi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${urlKey}&&units=metric`;
   axios.get(coordApi).then(handleAxiosResponse);
 }
 function handleGps() {
+  alert("gps handle");
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
