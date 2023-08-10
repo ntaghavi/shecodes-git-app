@@ -52,6 +52,14 @@ function handleAxiosResponse(response) {
   hum.innerHTML = Math.round(response.data.main.humidity);
   wind.innerHTML = Math.round(response.data.wind.speed);
 }
+function getInstantTemp() {
+  let urlApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${urlKey}&&units=metric`;
+  axios.get(urlApi).then((response) => {
+    currentTemp.innerHTML = Math.round(response.data.main.temp);
+    alert(currentTemp.innerHTML);
+  });
+}
+currentTemp.addEventListener("load", getInstantTemp);
 function getCityCoords(cityName) {
   let cityApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${urlKey}`;
   axios.get(cityApiUrl).then((response) => {
